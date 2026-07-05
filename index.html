@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roteiro Paris — Setembro 2026</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #faf9f7;
+      color: #2c2c2c;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: #1a1a1a;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #777;
+      font-style: italic;
+    }
+
+    #lang-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: transparent;
+      border: 1.5px solid #c8a97e;
+      color: #c8a97e;
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    #lang-btn:hover {
+      background: #c8a97e;
+      color: #fff;
+    }
+
+    .day {
+      max-width: 680px;
+      margin: 0 auto 36px auto;
+      border-left: 3px solid #c8a97e;
+      padding-left: 24px;
+    }
+
+    .day-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #c8a97e;
+      margin-bottom: 4px;
+    }
+
+    .day h2 {
+      font-size: 1.2rem;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .day .subtitle {
+      font-size: 0.85rem;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .day ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .day ul li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #3a3a3a;
+      padding: 3px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .day ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #c8a97e;
+    }
+
+    .tip {
+      margin-top: 12px;
+      background: #f3ede4;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      color: #5a4a38;
+      font-style: italic;
+    }
+
+    .weather-table {
+      max-width: 680px;
+      margin: 0 auto 36px auto;
+      border-left: 3px solid #7eb8c8;
+      padding-left: 24px;
+    }
+
+    .weather-table h2 {
+      font-size: 1.1rem;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 6px 12px;
+      background: #e8f3f7;
+      color: #2c6a80;
+      font-weight: bold;
+    }
+
+    td {
+      padding: 7px 12px;
+      border-bottom: 1px solid #e5e5e5;
+      color: #3a3a3a;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button id="lang-btn" onclick="toggleLang()">English</button>
+    <h1 data-i18n="header_title">Paris — Setembro 2026</h1>
+    <p data-i18n="header_sub">14 a 20 de setembro &nbsp;·&nbsp; Acomodação: 6 Bd Beaumarchais, 75011</p>
+  </header>
+
+  <!-- SEGUNDA-FEIRA / MONDAY -->
+  <div class="day">
+    <div class="day-label" data-i18n="mon_label">Segunda-feira, 14 de setembro</div>
+    <h2 data-i18n="mon_title">Chegada</h2>
+    <div class="subtitle" data-i18n="mon_sub">Voo pousa às 10h — considere a tarde livre</div>
+    <ul>
+      <li data-i18n="mon_li1">Imigração, bagagens e deslocamento até a acomodação: chegada prevista ~13h</li>
+      <li data-i18n="mon_li2">Descansar, desfazer as malas, almoçar perto</li>
+      <li data-i18n="mon_li3">Tarde leve: explorar o bairro a pé — a acomodação fica pertinho da Place de la Bastille</li>
+      <li data-i18n="mon_li4">Passeio tranquilo pelo Marais e pelo Porto do Arsenal</li>
+      <li data-i18n="mon_li5">Jantar no bairro: Bastille e Oberkampf têm ótimas opções</li>
+    </ul>
+  </div>
+
+  <!-- DIA 2 / DAY 2 -->
+  <div class="day">
+    <div class="day-label" data-i18n="d2_label">Dia 2</div>
+    <h2 data-i18n="d2_title">Giverny — Casa e Jardins de Monet</h2>
+    <div class="subtitle" data-i18n="d2_sub">Escolha um dia de sol — os jardins são o ponto principal</div>
+    <ul>
+      <li data-i18n="d2_li1">Sair de casa às 8h–8h30</li>
+      <li data-i18n="d2_li2">De Bastille: Metrô linha 9 até a Gare Saint-Lazare (~20 min)</li>
+      <li data-i18n="d2_li3">Trem Saint-Lazare → Vernon (~1h15), depois ônibus ou táxi até Giverny (~15 min)</li>
+      <li data-i18n="d2_li4">Trajeto total: ~1h45–2h em cada sentido</li>
+      <li data-i18n="d2_li5">Fondation Claude Monet: jardim de flores (Clos Normand) + lago de nenúfares e ponte japonesa — exatamente o que ele pintou</li>
+      <li data-i18n="d2_li6">Planejar 2–3 horas no local; a vila de Giverny é pequena e charmosa</li>
+      <li data-i18n="d2_li7">Retorno a Paris por volta das 19h–20h</li>
+    </ul>
+    <div class="tip" data-i18n="d2_tip">Compre os ingressos com antecedência em fondation-monet.com — entrada com horário marcado, esgota em setembro. Consulte os horários de trem no SNCF/Transilien na véspera.</div>
+  </div>
+
+  <!-- DIA 3 / DAY 3 -->
+  <div class="day">
+    <div class="day-label" data-i18n="d3_label">Dia 3</div>
+    <h2 data-i18n="d3_title">Louvre + Jardim das Tulherias + Place Vendôme</h2>
+    <div class="subtitle" data-i18n="d3_sub">Ótima opção para dias de chuva</div>
+    <ul>
+      <li data-i18n="d3_li1">Metrô linha 1 de Bastille → Louvre-Rivoli (~15 min)</li>
+      <li data-i18n="d3_li2">Museu do Louvre — chegar na abertura (9h), planejar no mínimo 3–4 horas; não tente ver tudo</li>
+      <li data-i18n="d3_li3">Jardim das Tulherias — logo na saída do Louvre, passeio ao ar livre</li>
+      <li data-i18n="d3_li4">Place Vendôme — 10 min a pé ao norte, uma parada rápida e impressionante</li>
+    </ul>
+    <div class="tip" data-i18n="d3_tip">Compre os ingressos do Louvre online com antecedência — não há venda presencial na porta.</div>
+  </div>
+
+  <!-- DIA 4 / DAY 4 -->
+  <div class="day">
+    <div class="day-label" data-i18n="d4_label">Dia 4</div>
+    <h2 data-i18n="d4_title">Musée d'Orsay + Torre Eiffel</h2>
+    <div class="subtitle" data-i18n="d4_sub">Planeje a Torre Eiffel para o fim da tarde, no horário do pôr do sol</div>
+    <ul>
+      <li data-i18n="d4_li1">Metrô de Bastille → Musée d'Orsay: linha 14 até Châtelet + RER C, ou linha 12 até Solférino (~20 min)</li>
+      <li data-i18n="d4_li2">Musée d'Orsay — manhã, 2–3 horas (Impressionismo, Van Gogh, Monet)</li>
+      <li data-i18n="d4_li3">Caminhada à beira do Sena (~1,5 km) ou metrô curto até a Torre Eiffel</li>
+      <li data-i18n="d4_li4">Torre Eiffel — chegar no meio da tarde e subir perto do pôr do sol</li>
+    </ul>
+    <div class="tip" data-i18n="d4_tip">Compre os ingressos da Torre Eiffel online com antecedência — esgotam semanas antes em setembro.</div>
+  </div>
+
+  <!-- DIA 5 / DAY 5 -->
+  <div class="day">
+    <div class="day-label" data-i18n="d5_label">Dia 5</div>
+    <h2 data-i18n="d5_title">Centro Pompidou + Notre-Dame + Bastille</h2>
+    <div class="subtitle" data-i18n="d5_sub">Tudo a caminhada da acomodação</div>
+    <ul>
+      <li data-i18n="d5_li1">Centro Pompidou — manhã (~15 min a pé da acomodação)</li>
+      <li data-i18n="d5_li2">Caminhada de ~15 min até a Île de la Cité → Catedral de Notre-Dame (reinaugurada em dezembro de 2024 — o interior está deslumbrante)</li>
+      <li data-i18n="d5_li3">Place de la Bastille à noite, passando pelo caminho de volta</li>
+    </ul>
+    <div class="tip" data-i18n="d5_tip">Este dia também funciona bem como alternativa chuvosa para o Louvre ou D'Orsay, já que Pompidou e Notre-Dame são atrações cobertas.</div>
+  </div>
+
+  <!-- DIA 6 / DAY 6 -->
+  <div class="day">
+    <div class="day-label" data-i18n="d6_label">Dia 6</div>
+    <h2 data-i18n="d6_title">Quartier Latin + Panthéon + Jardim do Luxemburgo</h2>
+    <div class="subtitle" data-i18n="d6_sub">O dia mais tranquilo — bom para um momento de descanso</div>
+    <ul>
+      <li data-i18n="d6_li1">Metrô de Bastille → Saint-Michel: linha 1 até Hôtel de Ville + caminhada, ou linha 14 até Châtelet + RER B (~20 min)</li>
+      <li data-i18n="d6_li2">Quartier Latin de manhã — livraria Shakespeare &amp; Co., ruelas medievais, cafés</li>
+      <li data-i18n="d6_li3">Panthéon — fim da manhã (cripta impressionante, pêndulo de Foucault)</li>
+      <li data-i18n="d6_li4">Jardim do Luxemburgo — tarde, perfeito para um piquenique ou sentar nas famosas cadeiras verdes</li>
+    </ul>
+  </div>
+
+  <!-- DIA 7 / DAY 7 -->
+  <div class="day">
+    <div class="day-label" data-i18n="d7_label">Dia 7</div>
+    <h2 data-i18n="d7_title">Sacré-Cœur + Montmartre</h2>
+    <div class="subtitle" data-i18n="d7_sub">Vá de manhã para aproveitar a luz e evitar as multidões</div>
+    <ul>
+      <li data-i18n="d7_li1">Metrô de Bastille → Abbesses: linha 9 oeste até Havre-Caumartin + linha 12 norte (~35–40 min)</li>
+      <li data-i18n="d7_li2">Sacré-Cœur bem cedo — a vista sobre Paris é mais bonita pela manhã</li>
+      <li data-i18n="d7_li3">Explorar a vila de Montmartre: Place du Tertre (praça dos artistas), Rue Lepic, região do Moulin Rouge</li>
+      <li data-i18n="d7_li4">Almoço tranquilo em Montmartre e retorno para arrumar as malas, se for o último dia</li>
+    </ul>
+    <div class="tip" data-i18n="d7_tip">Montmartre tem muitas ladeiras — use sapatos confortáveis.</div>
+  </div>
+
+  <!-- TABELA DE CLIMA / WEATHER TABLE -->
+  <div class="weather-table">
+    <h2 data-i18n="wt_title">Guia rápido para reorganizar por clima</h2>
+    <table>
+      <tr>
+        <th data-i18n="wt_th1">Dia de chuva</th>
+        <th data-i18n="wt_th2">Dia de sol</th>
+      </tr>
+      <tr>
+        <td data-i18n="wt_td1a">Dia 3 — Louvre</td>
+        <td data-i18n="wt_td1b">Dia 2 — Giverny</td>
+      </tr>
+      <tr>
+        <td data-i18n="wt_td2a">Dia 4 — Musée d'Orsay</td>
+        <td data-i18n="wt_td2b">Dia 4 — Torre Eiffel (pôr do sol)</td>
+      </tr>
+      <tr>
+        <td data-i18n="wt_td3a">Dia 5 — Centro Pompidou / Notre-Dame</td>
+        <td data-i18n="wt_td3b">Dia 3 — Jardim das Tulherias</td>
+      </tr>
+      <tr>
+        <td data-i18n="wt_td4a">Dia 6 — Panthéon</td>
+        <td data-i18n="wt_td4b">Dia 6 — Jardim do Luxemburgo</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td data-i18n="wt_td5b">Dia 7 — Montmartre / Sacré-Cœur</td>
+      </tr>
+    </table>
+    <div class="tip" style="margin-top: 14px;" data-i18n="wt_tip">Setembro em Paris costuma ser agradável (18–22°C) com chuvas ocasionais. Giverny é o dia mais dependente do tempo — priorize deixá-lo para a previsão mais favorável.</div>
+  </div>
+
+  <footer>
+    <span data-i18n="footer">Boa viagem &amp; bom roteiro &nbsp;·&nbsp; Paris, setembro 2026</span>
+  </footer>
+
+  <script>
+    const translations = {
+      pt: {
+        header_title: "Paris — Setembro 2026",
+        header_sub: "14 a 20 de setembro &nbsp;·&nbsp; Acomodação: 6 Bd Beaumarchais, 75011",
+        mon_label: "Segunda-feira, 14 de setembro",
+        mon_title: "Chegada",
+        mon_sub: "Voo pousa às 10h — considere a tarde livre",
+        mon_li1: "Imigração, bagagens e deslocamento até a acomodação: chegada prevista ~13h",
+        mon_li2: "Descansar, desfazer as malas, almoçar perto",
+        mon_li3: "Tarde leve: explorar o bairro a pé — a acomodação fica pertinho da Place de la Bastille",
+        mon_li4: "Passeio tranquilo pelo Marais e pelo Porto do Arsenal",
+        mon_li5: "Jantar no bairro: Bastille e Oberkampf têm ótimas opções",
+        d2_label: "Dia 2",
+        d2_title: "Giverny — Casa e Jardins de Monet",
+        d2_sub: "Escolha um dia de sol — os jardins são o ponto principal",
+        d2_li1: "Sair de casa às 8h–8h30",
+        d2_li2: "De Bastille: Metrô linha 9 até a Gare Saint-Lazare (~20 min)",
+        d2_li3: "Trem Saint-Lazare → Vernon (~1h15), depois ônibus ou táxi até Giverny (~15 min)",
+        d2_li4: "Trajeto total: ~1h45–2h em cada sentido",
+        d2_li5: "Fondation Claude Monet: jardim de flores (Clos Normand) + lago de nenúfares e ponte japonesa — exatamente o que ele pintou",
+        d2_li6: "Planejar 2–3 horas no local; a vila de Giverny é pequena e charmosa",
+        d2_li7: "Retorno a Paris por volta das 19h–20h",
+        d2_tip: "Compre os ingressos com antecedência em fondation-monet.com — entrada com horário marcado, esgota em setembro. Consulte os horários de trem no SNCF/Transilien na véspera.",
+        d3_label: "Dia 3",
+        d3_title: "Louvre + Jardim das Tulherias + Place Vendôme",
+        d3_sub: "Ótima opção para dias de chuva",
+        d3_li1: "Metrô linha 1 de Bastille → Louvre-Rivoli (~15 min)",
+        d3_li2: "Museu do Louvre — chegar na abertura (9h), planejar no mínimo 3–4 horas; não tente ver tudo",
+        d3_li3: "Jardim das Tulherias — logo na saída do Louvre, passeio ao ar livre",
+        d3_li4: "Place Vendôme — 10 min a pé ao norte, uma parada rápida e impressionante",
+        d3_tip: "Compre os ingressos do Louvre online com antecedência — não há venda presencial na porta.",
+        d4_label: "Dia 4",
+        d4_title: "Musée d'Orsay + Torre Eiffel",
+        d4_sub: "Planeje a Torre Eiffel para o fim da tarde, no horário do pôr do sol",
+        d4_li1: "Metrô de Bastille → Musée d'Orsay: linha 14 até Châtelet + RER C, ou linha 12 até Solférino (~20 min)",
+        d4_li2: "Musée d'Orsay — manhã, 2–3 horas (Impressionismo, Van Gogh, Monet)",
+        d4_li3: "Caminhada à beira do Sena (~1,5 km) ou metrô curto até a Torre Eiffel",
+        d4_li4: "Torre Eiffel — chegar no meio da tarde e subir perto do pôr do sol",
+        d4_tip: "Compre os ingressos da Torre Eiffel online com antecedência — esgotam semanas antes em setembro.",
+        d5_label: "Dia 5",
+        d5_title: "Centro Pompidou + Notre-Dame + Bastille",
+        d5_sub: "Tudo a caminhada da acomodação",
+        d5_li1: "Centro Pompidou — manhã (~15 min a pé da acomodação)",
+        d5_li2: "Caminhada de ~15 min até a Île de la Cité → Catedral de Notre-Dame (reinaugurada em dezembro de 2024 — o interior está deslumbrante)",
+        d5_li3: "Place de la Bastille à noite, passando pelo caminho de volta",
+        d5_tip: "Este dia também funciona bem como alternativa chuvosa para o Louvre ou D'Orsay, já que Pompidou e Notre-Dame são atrações cobertas.",
+        d6_label: "Dia 6",
+        d6_title: "Quartier Latin + Panthéon + Jardim do Luxemburgo",
+        d6_sub: "O dia mais tranquilo — bom para um momento de descanso",
+        d6_li1: "Metrô de Bastille → Saint-Michel: linha 1 até Hôtel de Ville + caminhada, ou linha 14 até Châtelet + RER B (~20 min)",
+        d6_li2: "Quartier Latin de manhã — livraria Shakespeare &amp; Co., ruelas medievais, cafés",
+        d6_li3: "Panthéon — fim da manhã (cripta impressionante, pêndulo de Foucault)",
+        d6_li4: "Jardim do Luxemburgo — tarde, perfeito para um piquenique ou sentar nas famosas cadeiras verdes",
+        d7_label: "Dia 7",
+        d7_title: "Sacré-Cœur + Montmartre",
+        d7_sub: "Vá de manhã para aproveitar a luz e evitar as multidões",
+        d7_li1: "Metrô de Bastille → Abbesses: linha 9 oeste até Havre-Caumartin + linha 12 norte (~35–40 min)",
+        d7_li2: "Sacré-Cœur bem cedo — a vista sobre Paris é mais bonita pela manhã",
+        d7_li3: "Explorar a vila de Montmartre: Place du Tertre (praça dos artistas), Rue Lepic, região do Moulin Rouge",
+        d7_li4: "Almoço tranquilo em Montmartre e retorno para arrumar as malas, se for o último dia",
+        d7_tip: "Montmartre tem muitas ladeiras — use sapatos confortáveis.",
+        wt_title: "Guia rápido para reorganizar por clima",
+        wt_th1: "Dia de chuva",
+        wt_th2: "Dia de sol",
+        wt_td1a: "Dia 3 — Louvre",
+        wt_td1b: "Dia 2 — Giverny",
+        wt_td2a: "Dia 4 — Musée d'Orsay",
+        wt_td2b: "Dia 4 — Torre Eiffel (pôr do sol)",
+        wt_td3a: "Dia 5 — Centro Pompidou / Notre-Dame",
+        wt_td3b: "Dia 3 — Jardim das Tulherias",
+        wt_td4a: "Dia 6 — Panthéon",
+        wt_td4b: "Dia 6 — Jardim do Luxemburgo",
+        wt_td5b: "Dia 7 — Montmartre / Sacré-Cœur",
+        wt_tip: "Setembro em Paris costuma ser agradável (18–22°C) com chuvas ocasionais. Giverny é o dia mais dependente do tempo — priorize deixá-lo para a previsão mais favorável.",
+        footer: "Boa viagem &amp; bom roteiro &nbsp;·&nbsp; Paris, setembro 2026"
+      },
+      en: {
+        header_title: "Paris — September 2026",
+        header_sub: "September 14–20 &nbsp;·&nbsp; Accommodation: 6 Bd Beaumarchais, 75011",
+        mon_label: "Monday, September 14th",
+        mon_title: "Arrival",
+        mon_sub: "Flight lands at 10am — consider the afternoon free",
+        mon_li1: "Immigration, luggage and travel to accommodation: expected arrival ~1pm",
+        mon_li2: "Rest, unpack, grab lunch nearby",
+        mon_li3: "Easy afternoon: explore the neighborhood on foot — accommodation is right by Place de la Bastille",
+        mon_li4: "Gentle stroll through the Marais and Port de l'Arsenal",
+        mon_li5: "Dinner nearby: Bastille and Oberkampf have great options",
+        d2_label: "Day 2",
+        d2_title: "Giverny — Monet's House &amp; Gardens",
+        d2_sub: "Pick a sunny day — the gardens are the whole point",
+        d2_li1: "Leave by 8:00–8:30am",
+        d2_li2: "From Bastille: Metro line 9 to Gare Saint-Lazare (~20 min)",
+        d2_li3: "Train Saint-Lazare → Vernon (~1h15), then bus or taxi to Giverny (~15 min)",
+        d2_li4: "Total journey: ~1h45–2h each way",
+        d2_li5: "Fondation Claude Monet: flower garden (Clos Normand) + water lily pond and Japanese bridge — exactly what he painted",
+        d2_li6: "Plan 2–3 hours on site; the village of Giverny is small and charming",
+        d2_li7: "Back in Paris by 7–8pm",
+        d2_tip: "Book tickets in advance at fondation-monet.com — timed entry, sells out in September. Check train times on SNCF/Transilien the night before.",
+        d3_label: "Day 3",
+        d3_title: "Louvre + Tuileries Garden + Place Vendôme",
+        d3_sub: "Great option for a rainy day",
+        d3_li1: "Metro line 1 from Bastille → Louvre-Rivoli (~15 min)",
+        d3_li2: "Louvre Museum — arrive at opening (9am), plan at least 3–4 hours; don't try to see everything",
+        d3_li3: "Tuileries Garden — right outside the Louvre, a lovely outdoor stroll",
+        d3_li4: "Place Vendôme — 10-min walk north, a quick but striking stop",
+        d3_tip: "Book Louvre tickets online in advance — no walk-in tickets at the door.",
+        d4_label: "Day 4",
+        d4_title: "Musée d'Orsay + Eiffel Tower",
+        d4_sub: "Plan the Eiffel Tower for late afternoon, around sunset",
+        d4_li1: "Metro from Bastille → Musée d'Orsay: line 14 to Châtelet + RER C, or line 12 to Solférino (~20 min)",
+        d4_li2: "Musée d'Orsay — morning, 2–3 hours (Impressionism, Van Gogh, Monet)",
+        d4_li3: "Walk along the Seine (~1.5 km) or short metro to the Eiffel Tower",
+        d4_li4: "Eiffel Tower — arrive mid-afternoon and go up around sunset",
+        d4_tip: "Book Eiffel Tower tickets online in advance — sells out weeks ahead in September.",
+        d5_label: "Day 5",
+        d5_title: "Centre Pompidou + Notre-Dame + Bastille",
+        d5_sub: "Everything within walking distance of the accommodation",
+        d5_li1: "Centre Pompidou — morning (~15-min walk from accommodation)",
+        d5_li2: "~15-min walk to Île de la Cité → Notre-Dame Cathedral (reopened December 2024 — the interior is stunning)",
+        d5_li3: "Place de la Bastille in the evening on the way back",
+        d5_tip: "This day also works well as a rainy-day swap for the Louvre or D'Orsay, since Pompidou and Notre-Dame are both indoor attractions.",
+        d6_label: "Day 6",
+        d6_title: "Latin Quarter + Panthéon + Luxembourg Garden",
+        d6_sub: "The most relaxed day — good if you need a breather",
+        d6_li1: "Metro from Bastille → Saint-Michel: line 1 to Hôtel de Ville + walk, or line 14 to Châtelet + RER B (~20 min)",
+        d6_li2: "Latin Quarter in the morning — Shakespeare &amp; Co. bookshop, medieval lanes, cafés",
+        d6_li3: "Panthéon — late morning (impressive crypt, Foucault's pendulum)",
+        d6_li4: "Luxembourg Garden — afternoon, perfect for a picnic or sitting in the famous green chairs",
+        d7_label: "Day 7",
+        d7_title: "Sacré-Cœur + Montmartre",
+        d7_sub: "Go in the morning for the light and smaller crowds",
+        d7_li1: "Metro from Bastille → Abbesses: line 9 west to Havre-Caumartin + line 12 north (~35–40 min)",
+        d7_li2: "Sacré-Cœur early morning — the view over Paris is best in morning light",
+        d7_li3: "Explore Montmartre village: Place du Tertre (artists' square), Rue Lepic, Moulin Rouge area",
+        d7_li4: "Leisurely lunch in Montmartre and head back to pack, if it's your last day",
+        d7_tip: "Montmartre is hilly — comfortable shoes matter here.",
+        wt_title: "Quick guide for rearranging by weather",
+        wt_th1: "Rainy day",
+        wt_th2: "Sunny day",
+        wt_td1a: "Day 3 — Louvre",
+        wt_td1b: "Day 2 — Giverny",
+        wt_td2a: "Day 4 — Musée d'Orsay",
+        wt_td2b: "Day 4 — Eiffel Tower (sunset)",
+        wt_td3a: "Day 5 — Centre Pompidou / Notre-Dame",
+        wt_td3b: "Day 3 — Tuileries Garden",
+        wt_td4a: "Day 6 — Panthéon",
+        wt_td4b: "Day 6 — Luxembourg Garden",
+        wt_td5b: "Day 7 — Montmartre / Sacré-Cœur",
+        wt_tip: "September in Paris is generally mild (18–22°C) with occasional showers. Giverny is the most weather-dependent day — prioritize saving it for the best forecast.",
+        footer: "Safe travels &amp; enjoy the trip &nbsp;·&nbsp; Paris, September 2026"
+      }
+    };
+
+    let currentLang = 'pt';
+
+    function toggleLang() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      const dict = translations[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      document.getElementById('lang-btn').textContent = currentLang === 'pt' ? 'English' : 'Português';
+      document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+    }
+  </script>
+
+</body>
+</html>
