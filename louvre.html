@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia do Louvre — Roteiro Paris</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #faf9f7;
+      color: #2c2c2c;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      color: #c8a97e;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    #lang-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: transparent;
+      border: 1.5px solid #c8a97e;
+      color: #c8a97e;
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    #lang-btn:hover {
+      background: #c8a97e;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.03em;
+      color: #1a1a1a;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #777;
+      font-style: italic;
+    }
+
+    section {
+      max-width: 720px;
+      margin: 0 auto 36px auto;
+      border-left: 3px solid #c8a97e;
+      padding-left: 24px;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    section .section-sub {
+      font-size: 0.85rem;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .tip {
+      margin-top: 12px;
+      background: #f3ede4;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      color: #5a4a38;
+      font-style: italic;
+    }
+
+    ol.route-list, ul.plain-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: step;
+    }
+
+    ol.route-list li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #3a3a3a;
+      padding: 6px 0 6px 14px;
+      position: relative;
+    }
+
+    ol.route-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #c8a97e;
+    }
+
+    ul.plain-list li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #3a3a3a;
+      padding: 3px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    ul.plain-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #c8a97e;
+    }
+
+    .artwork-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .artwork-card {
+      background: #fff;
+      border: 1px solid #ece5d8;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artwork-card .stop-number {
+      position: absolute;
+      margin: 8px;
+      background: #c8a97e;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: bold;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .artwork-card .img-wrap {
+      position: relative;
+      background: #eee;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .artwork-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .artwork-card .info {
+      padding: 12px 14px 14px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artwork-card .info h3 {
+      font-size: 0.98rem;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .artwork-card .artist {
+      font-size: 0.78rem;
+      color: #954e17;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .artwork-card .room-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: #e8f3f7;
+      color: #2c6a80;
+      padding: 3px 8px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+
+    .artwork-card .desc {
+      font-size: 0.85rem;
+      color: #5a5a5a;
+      line-height: 1.5;
+    }
+
+    .entrance-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .entrance-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 14px 16px;
+      border: 1px solid #ece5d8;
+    }
+
+    .entrance-card.recommended {
+      border: 1.5px solid #c8a97e;
+      background: #fdfaf4;
+    }
+
+    .entrance-card .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #c8a97e;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    .entrance-card h3 {
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+
+    .entrance-card p {
+      font-size: 0.85rem;
+      color: #5a5a5a;
+      line-height: 1.5;
+    }
+
+    .video-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #c8a97e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .video-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #c8a97e;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 24px 14px; }
+      #lang-btn { position: static; display: inline-block; margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="back-link" href="index.html" data-i18n="back_link">&larr; Voltar ao roteiro</a><br>
+    <button id="lang-btn" onclick="toggleLang()">English</button>
+    <h1 data-i18n="page_title">Louvre como um profissional</h1>
+    <p data-i18n="page_sub">Dia 3 &nbsp;·&nbsp; Entrada reservada às 9h30 &nbsp;·&nbsp; Roteiro direto aos destaques, começando pela Mona Lisa</p>
+  </header>
+
+  <!-- ENTRANCE -->
+  <section>
+    <h2 data-i18n="entrance_title">Por qual entrada ir</h2>
+    <div class="section-sub" data-i18n="entrance_sub">A fila da Pirâmide é sempre a pior — evite</div>
+    <div class="entrance-cards">
+      <div class="entrance-card recommended">
+        <span class="badge" data-i18n="entrance_badge_best">Melhor opção</span>
+        <h3 data-i18n="entrance1_title">Carrossel do Louvre (entrada subterrânea)</h3>
+        <p data-i18n="entrance1_desc">99 Rue de Rivoli, pelo shopping Carrousel du Louvre, ou pela entrada do jardim (Passage Richelieu não vale, veja abaixo). É a mesma bilheteria/segurança da Pirâmide, mas a maioria dos turistas nem sabe que ela existe — fila bem mais curta, principalmente logo de manhã.</p>
+        <a class="video-link" href="https://www.instagram.com/reel/C8Dmux7vgHl/?hl=en" target="_blank" rel="noopener noreferrer" data-i18n="entrance1_link">Veja em vídeo &rarr;</a>
+      </div>
+      <div class="entrance-card">
+        <h3 data-i18n="entrance2_title">Porte des Lions</h3>
+        <p data-i18n="entrance2_desc">Entrada pouco conhecida no lado sudoeste (perto do Sena, ala Denon). Costuma ter fila curta, mas abre com horário mais restrito e às vezes fecha sem aviso — confirme no site oficial do Louvre antes de contar com ela.</p>
+      </div>
+      <div class="entrance-card">
+        <h3 data-i18n="entrance3_title">Passage Richelieu</h3>
+        <p data-i18n="entrance3_desc">A mais rápida de todas, mas reservada para grupos, membros (Carte Louvre) e tours guiados licenciados — não é opção para visita individual.</p>
+      </div>
+    </div>
+    <div class="tip" data-i18n="entrance_tip">Ingresso com horário marcado (9h30) já garante entrada prioritária — mas escolher o Carrossel em vez da Pirâmide poupa a fila de segurança, que é separada da fila de ingresso. Leve documento de identidade.</div>
+  </section>
+
+  <!-- ROUTE -->
+  <section>
+    <h2 data-i18n="route_title">O roteiro — direto aos destaques</h2>
+    <div class="section-sub" data-i18n="route_sub">Nessa ordem, sem voltar sobre os próprios passos — comece pela Mona Lisa antes das multidões chegarem</div>
+    <ol class="route-list">
+      <li data-i18n="route_li1">Entre pela ala Denon e passe primeiro pela Galeria Michelangelo, térreo (Sala 403) — Psiquê Reanimada pelo Beijo de Cupido, antes de subir</li>
+      <li data-i18n="route_li2">Suba para o 1º andar — Sala 711 (Salle des États) — Mona Lisa, e vire de costas para ver A Núpcias de Caná na parede oposta, o maior quadro do museu</li>
+      <li data-i18n="route_li3">Grande Galerie — a longa galeria de pinturas renascentistas italianas que liga a Sala 711 ao resto da ala Denon</li>
+      <li data-i18n="route_li4">Topo da Escadaria Daru — Vitória de Samotrácia, no patamar central da escada</li>
+      <li data-i18n="route_li5">Sala 700 (Salle Mollien) — A Liberdade Guiando o Povo e A Jangada da Medusa, de frente uma para a outra</li>
+      <li data-i18n="route_li6">Sala 702 (Salle Daru), ao lado — A Sagração de Napoleão</li>
+      <li data-i18n="route_li7">Desça para a ala Sully, térreo — Sala 345, Vênus de Milo</li>
+      <li data-i18n="route_li8">Cripta da Esfinge, Sully térreo (Sala 338) — Grande Esfinge de Tânis, na entrada das antiguidades egípcias</li>
+      <li data-i18n="route_li9">Ala Richelieu, térreo, Sala 227 — Código de Hamurábi, nas antiguidades da Mesopotâmia</li>
+      <li data-i18n="route_li10">Ao lado, Sala 229 (Cour Khorsabad) — os Lamassus, touros alados de cabeça humana que guardavam o palácio de Sargão II</li>
+    </ol>
+    <div class="tip" data-i18n="route_tip">Esse roteiro cobre os grandes nomes em cerca de 2,5–3 horas de caminhada tranquila. Com a reserva de 3–4 horas do dia, ainda sobra uma folga para um dos bônus abaixo ou para se perder na Grande Galerie.</div>
+  </section>
+
+  <!-- BONUS -->
+  <section>
+    <h2 data-i18n="bonus_title">Bônus — se sobrar tempo</h2>
+    <div class="section-sub" data-i18n="bonus_sub">Fora da rota principal, mas perto o suficiente para encaixar sem perder muito tempo</div>
+    <ul class="plain-list">
+      <li data-i18n="bonus_li1">Estátua do Escriba Sentado — ala Sully, 1º andar, Sala 635 — mais um lance de escada a partir da Esfinge, mas os olhos de cristal incrustado valem a subida</li>
+      <li data-i18n="bonus_li2">Apartamentos de Napoleão III — ala Richelieu, 1º andar — suba direto de onde você já está (Sala 227/229) para ver os salões dourados do Segundo Império</li>
+      <li data-i18n="bonus_li3">Fundações medievais do Louvre — ala Sully, nível -1 — desça até o porão para ver as muralhas e o fosso do castelo original do século XII</li>
+    </ul>
+  </section>
+
+  <!-- ARTWORKS -->
+  <section>
+    <h2 data-i18n="art_title">As obras — para reconhecer antes de chegar na sala</h2>
+    <div class="section-sub" data-i18n="art_sub">Fotos e localização de cada destaque, na ordem do roteiro acima</div>
+    <div class="artwork-grid">
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/0%20Psych%C3%A9%20ranim%C3%A9e%20par%20le%20baiser%20de%20l%27Amour%20-%20Canova%20-%20Louvre%201.JPG?width=500" alt="Psiquê Reanimada pelo Beijo de Cupido"></div>
+        <div class="info">
+          <h3 data-i18n="art0_name">Psiquê Reanimada pelo Beijo de Cupido</h3>
+          <div class="artist" data-i18n="art0_artist">Antonio Canova, 1787–1793</div>
+          <span class="room-tag" data-i18n="art0_room">Denon, térreo — Sala 403 (Galeria Michelangelo)</span>
+          <div class="desc" data-i18n="art0_desc">Mármore neoclássico capturando o instante em que Cupido desperta Psiquê com um beijo — leveza e movimento talhados em pedra.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mona%20Lisa%2C%20by%20Leonardo%20da%20Vinci%2C%20from%20C2RMF%20retouched.jpg?width=500" alt="Mona Lisa"></div>
+        <div class="info">
+          <h3 data-i18n="art1_name">Mona Lisa (La Joconde)</h3>
+          <div class="artist" data-i18n="art1_artist">Leonardo da Vinci, ~1503–1519</div>
+          <span class="room-tag" data-i18n="art1_room">Denon, 1º andar — Sala 711</span>
+          <div class="desc" data-i18n="art1_desc">Menor do que a maioria espera (77×53 cm) e atrás de vidro à prova de bala — chegue antes das 10h para vê-la sem multidão na frente.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20008.jpg?width=500" alt="As Núpcias de Caná"></div>
+        <div class="info">
+          <h3 data-i18n="art2_name">As Núpcias de Caná</h3>
+          <div class="artist" data-i18n="art2_artist">Paolo Veronese, 1563</div>
+          <span class="room-tag" data-i18n="art2_room">Denon, 1º andar — Sala 711 (parede oposta à Mona Lisa)</span>
+          <div class="desc" data-i18n="art2_desc">O maior quadro do Louvre — mais de 70 m². Quase ninguém repara nele porque todos estão de costas, olhando a Mona Lisa.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Victoire%20de%20Samothrace%20-%20Musee%20du%20Louvre%20-%2020190812.jpg?width=500" alt="Vitória de Samotrácia"></div>
+        <div class="info">
+          <h3 data-i18n="art3_name">Vitória de Samotrácia</h3>
+          <div class="artist" data-i18n="art3_artist">Escultura grega, ~190 a.C.</div>
+          <span class="room-tag" data-i18n="art3_room">Denon, 1º andar — topo da Escadaria Daru</span>
+          <div class="desc" data-i18n="art3_desc">Estátua sem cabeça nem braços, no alto de uma escadaria monumental — um dos pontos mais fotografados do museu.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Libert%C3%A9%20guidant%20le%20peuple%20-%20Eug%C3%A8ne%20Delacroix%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20RF%20129%20-%20apr%C3%A8s%20restauration%202024.jpg?width=500" alt="A Liberdade Guiando o Povo"></div>
+        <div class="info">
+          <h3 data-i18n="art4_name">A Liberdade Guiando o Povo</h3>
+          <div class="artist" data-i18n="art4_artist">Eugène Delacroix, 1830</div>
+          <span class="room-tag" data-i18n="art4_room">Denon, 1º andar — Sala 700 (Salle Mollien)</span>
+          <div class="desc" data-i18n="art4_desc">A mulher com a bandeira francesa erguida — imagem que virou símbolo da própria ideia de revolução.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/JEAN%20LOUIS%20TH%C3%89ODORE%20G%C3%89RICAULT%20-%20La%20Balsa%20de%20la%20Medusa%20%28Museo%20del%20Louvre%2C%201818-19%29.jpg?width=500" alt="A Jangada da Medusa"></div>
+        <div class="info">
+          <h3 data-i18n="art5_name">A Jangada da Medusa</h3>
+          <div class="artist" data-i18n="art5_artist">Théodore Géricault, 1818–1819</div>
+          <span class="room-tag" data-i18n="art5_room">Denon, 1º andar — Sala 700 (de frente para a Liberdade)</span>
+          <div class="desc" data-i18n="art5_desc">Tela enorme e dramática — náufragos amontoados numa jangada, baseada num naufrágio real que chocou a França.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20The%20Coronation%20of%20Napoleon%20%281805-1807%29.jpg?width=500" alt="A Sagração de Napoleão"></div>
+        <div class="info">
+          <h3 data-i18n="art6_name">A Sagração de Napoleão</h3>
+          <div class="artist" data-i18n="art6_artist">Jacques-Louis David, 1805–1807</div>
+          <span class="room-tag" data-i18n="art6_room">Denon, 1º andar — Sala 702 (Salle Daru)</span>
+          <div class="desc" data-i18n="art6_desc">Tela gigantesca (quase 10 m de largura) mostrando Napoleão coroando a própria esposa diante do Papa.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Front%20views%20of%20the%20Venus%20de%20Milo.jpg?width=500" alt="Vênus de Milo"></div>
+        <div class="info">
+          <h3 data-i18n="art7_name">Vênus de Milo</h3>
+          <div class="artist" data-i18n="art7_artist">Escultura grega, ~150–125 a.C.</div>
+          <span class="room-tag" data-i18n="art7_room">Sully, térreo — Sala 345</span>
+          <div class="desc" data-i18n="art7_desc">A estátua sem braços mais famosa do mundo — vale caminhar ao redor para ver os ângulos além da foto clássica de frente.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grand%20sphinx%20de%20Tanis%20-%20Mus%C3%A9e%20du%20Louvre%20Antiquit%C3%A9s%20%C3%A9gyptiennes%20N%2023%20%3B%20A%2023%20%3B%20Salt%203837.jpg?width=500" alt="Grande Esfinge de Tânis"></div>
+        <div class="info">
+          <h3 data-i18n="art8_name">Grande Esfinge de Tânis</h3>
+          <div class="artist" data-i18n="art8_artist">Egito Antigo, ~2600 a.C.</div>
+          <span class="room-tag" data-i18n="art8_room">Sully, térreo — Sala 338 (Cripta da Esfinge)</span>
+          <div class="desc" data-i18n="art8_desc">Uma das maiores esfinges fora do Egito, bem na entrada do departamento de antiguidades egípcias.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P1050763%20Louvre%20code%20Hammurabi%20face%20rwk.JPG?width=500" alt="Código de Hamurábi"></div>
+        <div class="info">
+          <h3 data-i18n="art9_name">Código de Hamurábi</h3>
+          <div class="artist" data-i18n="art9_artist">Babilônia, ~1750 a.C.</div>
+          <span class="room-tag" data-i18n="art9_room">Richelieu, térreo — Sala 227</span>
+          <div class="desc" data-i18n="art9_desc">Estela de basalto de 2,25 m com um dos códigos de leis mais antigos já encontrados, entalhado em escrita cuneiforme.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Human-headed%20Winged%20Bulls%20Gate%20-%20Louvre.jpg?width=500" alt="Lamassu"></div>
+        <div class="info">
+          <h3 data-i18n="art10_name">Lamassus (touros alados)</h3>
+          <div class="artist" data-i18n="art10_artist">Palácio de Sargão II, Khorsabad, ~720–705 a.C.</div>
+          <span class="room-tag" data-i18n="art10_room">Richelieu, térreo — Sala 229 (Cour Khorsabad)</span>
+          <div class="desc" data-i18n="art10_desc">Guardiões assírios de 28 toneladas, com corpo de touro, asas de águia e cabeça humana coroada — ficavam nos portões do palácio para afastar o mal.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Scribe%20accroupi%20-%20Mus%C3%A9e%20du%20Louvre%20Antiquit%C3%A9s%20%C3%A9gyptiennes%20E%203023.jpg?width=500" alt="Escriba Sentado"></div>
+        <div class="info">
+          <h3 data-i18n="art11_name">Escriba Sentado</h3>
+          <div class="artist" data-i18n="art11_artist">Egito Antigo, ~2600–2350 a.C.</div>
+          <span class="room-tag" data-i18n="art11_room">Sully, 1º andar — Sala 635 (bônus)</span>
+          <div class="desc" data-i18n="art11_desc">Calcário pintado com mais de 4.000 anos, famoso pelos olhos incrustados de cristal que parecem seguir quem passa.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Napoleon%20III%20apartments%20%2831289567722%29.jpg?width=500" alt="Apartamentos de Napoleão III"></div>
+        <div class="info">
+          <h3 data-i18n="art12_name">Apartamentos de Napoleão III</h3>
+          <div class="artist" data-i18n="art12_artist">Segundo Império, década de 1860</div>
+          <span class="room-tag" data-i18n="art12_room">Richelieu, 1º andar (bônus)</span>
+          <div class="desc" data-i18n="art12_desc">Salões dourados e vermelhos, lustres enormes — nada de antiguidade aqui, é puro exagero do Segundo Império francês.</div>
+        </div>
+      </div>
+      <div class="artwork-card">
+        <div class="img-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Louvre%20medieval%20foundations%20flickr.jpg?width=500" alt="Fundações medievais do Louvre"></div>
+        <div class="info">
+          <h3 data-i18n="art13_name">Fundações medievais do Louvre</h3>
+          <div class="artist" data-i18n="art13_artist">Fortaleza de Filipe Augusto, final do séc. XII</div>
+          <span class="room-tag" data-i18n="art13_room">Sully, nível -1 (bônus)</span>
+          <div class="desc" data-i18n="art13_desc">O porão do museu guarda o fosso e as muralhas do castelo original, de quando o Louvre era uma fortaleza defensiva.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOD TO KNOW -->
+  <section>
+    <h2 data-i18n="know_title">Bom saber</h2>
+    <ul class="plain-list">
+      <li data-i18n="know_li1">A Galeria de Apolo reabriu em julho de 2026 após o roubo das joias da coroa em outubro de 2025 — as vitrines onde ficavam as joias estão vazias, então não é mais parada obrigatória neste roteiro</li>
+      <li data-i18n="know_li2">Wi-Fi gratuito no museu (rede _Musée du Louvre) se quiser conferir o mapa oficial pelo app</li>
+      <li data-i18n="know_li3">Bolsas grandes e malas passam por raio-x na entrada — venha só com o essencial para agilizar a segurança</li>
+      <li data-i18n="know_li4">Banheiros e um café ficam no hall subterrâneo, sob a Pirâmide — bom ponto de pausa entre a ala Denon e a Sully</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span data-i18n="footer">Roteiro Paris, setembro 2026</span>
+  </footer>
+
+  <script>
+    const translations = {
+      pt: {
+        back_link: "&larr; Voltar ao roteiro",
+        page_title: "Louvre como um profissional",
+        page_sub: "Dia 3 &nbsp;·&nbsp; Entrada reservada às 9h30 &nbsp;·&nbsp; Roteiro direto aos destaques, começando pela Mona Lisa",
+        entrance_title: "Por qual entrada ir",
+        entrance_sub: "A fila da Pirâmide é sempre a pior — evite",
+        entrance_badge_best: "Melhor opção",
+        entrance1_title: "Carrossel do Louvre (entrada subterrânea)",
+        entrance1_desc: "99 Rue de Rivoli, pelo shopping Carrousel du Louvre, ou pela entrada do jardim. É a mesma bilheteria/segurança da Pirâmide, mas a maioria dos turistas nem sabe que ela existe — fila bem mais curta, principalmente logo de manhã.",
+        entrance1_link: "Veja em vídeo &rarr;",
+        entrance2_title: "Porte des Lions",
+        entrance2_desc: "Entrada pouco conhecida no lado sudoeste (perto do Sena, ala Denon). Costuma ter fila curta, mas abre com horário mais restrito e às vezes fecha sem aviso — confirme no site oficial do Louvre antes de contar com ela.",
+        entrance3_title: "Passage Richelieu",
+        entrance3_desc: "A mais rápida de todas, mas reservada para grupos, membros (Carte Louvre) e tours guiados licenciados — não é opção para visita individual.",
+        entrance_tip: "Ingresso com horário marcado (9h30) já garante entrada prioritária — mas escolher o Carrossel em vez da Pirâmide poupa a fila de segurança, que é separada da fila de ingresso. Leve documento de identidade.",
+        route_title: "O roteiro — direto aos destaques",
+        route_sub: "Nessa ordem, sem voltar sobre os próprios passos — comece pela Mona Lisa antes das multidões chegarem",
+        route_li1: "Entre pela ala Denon e passe primeiro pela Galeria Michelangelo, térreo (Sala 403) — Psiquê Reanimada pelo Beijo de Cupido, antes de subir",
+        route_li2: "Suba para o 1º andar — Sala 711 (Salle des États) — Mona Lisa, e vire de costas para ver A Núpcias de Caná na parede oposta, o maior quadro do museu",
+        route_li3: "Grande Galerie — a longa galeria de pinturas renascentistas italianas que liga a Sala 711 ao resto da ala Denon",
+        route_li4: "Topo da Escadaria Daru — Vitória de Samotrácia, no patamar central da escada",
+        route_li5: "Sala 700 (Salle Mollien) — A Liberdade Guiando o Povo e A Jangada da Medusa, de frente uma para a outra",
+        route_li6: "Sala 702 (Salle Daru), ao lado — A Sagração de Napoleão",
+        route_li7: "Desça para a ala Sully, térreo — Sala 345, Vênus de Milo",
+        route_li8: "Cripta do Sphinx, Sully térreo (Sala 338) — Grande Esfinge de Tânis, na entrada das antiguidades egípcias",
+        route_li9: "Ala Richelieu, térreo, Sala 227 — Código de Hamurábi, nas antiguidades da Mesopotâmia",
+        route_li10: "Ao lado, Sala 229 (Cour Khorsabad) — os Lamassus, touros alados de cabeça humana que guardavam o palácio de Sargão II",
+        route_tip: "Esse roteiro cobre os grandes nomes em cerca de 2,5–3 horas de caminhada tranquila. Com a reserva de 3–4 horas do dia, ainda sobra uma folga para um dos bônus abaixo ou para se perder na Grande Galerie.",
+        bonus_title: "Bônus — se sobrar tempo",
+        bonus_sub: "Fora da rota principal, mas perto o suficiente para encaixar sem perder muito tempo",
+        bonus_li1: "Estátua do Escriba Sentado — ala Sully, 1º andar, Sala 635 — mais um lance de escada a partir da Esfinge, mas os olhos de cristal incrustado valem a subida",
+        bonus_li2: "Apartamentos de Napoleão III — ala Richelieu, 1º andar — suba direto de onde você já está (Sala 227/229) para ver os salões dourados do Segundo Império",
+        bonus_li3: "Fundações medievais do Louvre — ala Sully, nível -1 — desça até o porão para ver as muralhas e o fosso do castelo original do século XII",
+        art_title: "As obras — para reconhecer antes de chegar na sala",
+        art_sub: "Fotos e localização de cada destaque, na ordem do roteiro acima",
+        art0_name: "Psiquê Reanimada pelo Beijo de Cupido",
+        art0_artist: "Antonio Canova, 1787–1793",
+        art0_room: "Denon, térreo — Sala 403 (Galeria Michelangelo)",
+        art0_desc: "Mármore neoclássico capturando o instante em que Cupido desperta Psiquê com um beijo — leveza e movimento talhados em pedra.",
+        art1_name: "Mona Lisa (La Joconde)",
+        art1_artist: "Leonardo da Vinci, ~1503–1519",
+        art1_room: "Denon, 1º andar — Sala 711",
+        art1_desc: "Menor do que a maioria espera (77×53 cm) e atrás de vidro à prova de bala — chegue antes das 10h para vê-la sem multidão na frente.",
+        art2_name: "As Núpcias de Caná",
+        art2_artist: "Paolo Veronese, 1563",
+        art2_room: "Denon, 1º andar — Sala 711 (parede oposta à Mona Lisa)",
+        art2_desc: "O maior quadro do Louvre — mais de 70 m². Quase ninguém repara nele porque todos estão de costas, olhando a Mona Lisa.",
+        art3_name: "Vitória de Samotrácia",
+        art3_artist: "Escultura grega, ~190 a.C.",
+        art3_room: "Denon, 1º andar — topo da Escadaria Daru",
+        art3_desc: "Estátua sem cabeça nem braços, no alto de uma escadaria monumental — um dos pontos mais fotografados do museu.",
+        art4_name: "A Liberdade Guiando o Povo",
+        art4_artist: "Eugène Delacroix, 1830",
+        art4_room: "Denon, 1º andar — Sala 700 (Salle Mollien)",
+        art4_desc: "A mulher com a bandeira francesa erguida — imagem que virou símbolo da própria ideia de revolução.",
+        art5_name: "A Jangada da Medusa",
+        art5_artist: "Théodore Géricault, 1818–1819",
+        art5_room: "Denon, 1º andar — Sala 700 (de frente para a Liberdade)",
+        art5_desc: "Tela enorme e dramática — náufragos amontoados numa jangada, baseada num naufrágio real que chocou a França.",
+        art6_name: "A Sagração de Napoleão",
+        art6_artist: "Jacques-Louis David, 1805–1807",
+        art6_room: "Denon, 1º andar — Sala 702 (Salle Daru)",
+        art6_desc: "Tela gigantesca (quase 10 m de largura) mostrando Napoleão coroando a própria esposa diante do Papa.",
+        art7_name: "Vênus de Milo",
+        art7_artist: "Escultura grega, ~150–125 a.C.",
+        art7_room: "Sully, térreo — Sala 345",
+        art7_desc: "A estátua sem braços mais famosa do mundo — vale caminhar ao redor para ver os ângulos além da foto clássica de frente.",
+        art8_name: "Grande Esfinge de Tânis",
+        art8_artist: "Egito Antigo, ~2600 a.C.",
+        art8_room: "Sully, térreo — Sala 338 (Cripta da Esfinge)",
+        art8_desc: "Uma das maiores esfinges fora do Egito, bem na entrada do departamento de antiguidades egípcias.",
+        art9_name: "Código de Hamurábi",
+        art9_artist: "Babilônia, ~1750 a.C.",
+        art9_room: "Richelieu, térreo — Sala 227",
+        art9_desc: "Estela de basalto de 2,25 m com um dos códigos de leis mais antigos já encontrados, entalhado em escrita cuneiforme.",
+        art10_name: "Lamassus (touros alados)",
+        art10_artist: "Palácio de Sargão II, Khorsabad, ~720–705 a.C.",
+        art10_room: "Richelieu, térreo — Sala 229 (Cour Khorsabad)",
+        art10_desc: "Guardiões assírios de 28 toneladas, com corpo de touro, asas de águia e cabeça humana coroada — ficavam nos portões do palácio para afastar o mal.",
+        art11_name: "Escriba Sentado",
+        art11_artist: "Egito Antigo, ~2600–2350 a.C.",
+        art11_room: "Sully, 1º andar — Sala 635 (bônus)",
+        art11_desc: "Calcário pintado com mais de 4.000 anos, famoso pelos olhos incrustados de cristal que parecem seguir quem passa.",
+        art12_name: "Apartamentos de Napoleão III",
+        art12_artist: "Segundo Império, década de 1860",
+        art12_room: "Richelieu, 1º andar (bônus)",
+        art12_desc: "Salões dourados e vermelhos, lustres enormes — nada de antiguidade aqui, é puro exagero do Segundo Império francês.",
+        art13_name: "Fundações medievais do Louvre",
+        art13_artist: "Fortaleza de Filipe Augusto, final do séc. XII",
+        art13_room: "Sully, nível -1 (bônus)",
+        art13_desc: "O porão do museu guarda o fosso e as muralhas do castelo original, de quando o Louvre era uma fortaleza defensiva.",
+        know_title: "Bom saber",
+        know_li1: "A Galeria de Apolo reabriu em julho de 2026 após o roubo das joias da coroa em outubro de 2025 — as vitrines onde ficavam as joias estão vazias, então não é mais parada obrigatória neste roteiro",
+        know_li2: "Wi-Fi gratuito no museu (rede _Musée du Louvre) se quiser conferir o mapa oficial pelo app",
+        know_li3: "Bolsas grandes e malas passam por raio-x na entrada — venha só com o essencial para agilizar a segurança",
+        know_li4: "Banheiros e um café ficam no hall subterrâneo, sob a Pirâmide — bom ponto de pausa entre a ala Denon e a Sully",
+        footer: "Roteiro Paris, setembro 2026"
+      },
+      en: {
+        back_link: "&larr; Back to itinerary",
+        page_title: "The Louvre like a pro",
+        page_sub: "Day 3 &nbsp;·&nbsp; 9:30am entry booked &nbsp;·&nbsp; A direct route to the highlights, starting with the Mona Lisa",
+        entrance_title: "Which entrance to use",
+        entrance_sub: "The Pyramid line is always the worst — skip it",
+        entrance_badge_best: "Best option",
+        entrance1_title: "Carrousel du Louvre (underground entrance)",
+        entrance1_desc: "99 Rue de Rivoli, through the Carrousel du Louvre shopping mall, or via the garden entrance. Same ticket check/security as the Pyramid, but most tourists don't even know it exists — a much shorter line, especially first thing in the morning.",
+        entrance1_link: "Watch the video &rarr;",
+        entrance2_title: "Porte des Lions",
+        entrance2_desc: "A lesser-known entrance on the southwest side (near the Seine, Denon wing). Usually a short line, but it keeps more limited hours and sometimes closes without notice — check the official Louvre site before counting on it.",
+        entrance3_title: "Passage Richelieu",
+        entrance3_desc: "The fastest of all, but reserved for groups, members (Carte Louvre), and licensed guided tours — not an option for an individual visit.",
+        entrance_tip: "Your timed ticket (9:30am) already guarantees priority entry — but choosing the Carrousel over the Pyramid still saves you the security line, which is separate from the ticket line. Bring ID.",
+        route_title: "The route — straight to the highlights",
+        route_sub: "In this order, with no backtracking — start with the Mona Lisa before the crowds arrive",
+        route_li1: "Enter through the Denon wing and stop first in the Michelangelo Gallery, ground floor (Room 403) — Psyche Revived by Cupid's Kiss, before heading up",
+        route_li2: "Head up to the 1st floor — Room 711 (Salle des États) — the Mona Lisa, then turn around for The Wedding at Cana on the opposite wall, the largest painting in the museum",
+        route_li3: "Grande Galerie — the long hall of Italian Renaissance paintings connecting Room 711 to the rest of the Denon wing",
+        route_li4: "Top of the Daru staircase — Winged Victory of Samothrace, on the central landing",
+        route_li5: "Room 700 (Salle Mollien) — Liberty Leading the People and The Raft of the Medusa, facing each other",
+        route_li6: "Room 702 (Salle Daru), next door — The Coronation of Napoleon",
+        route_li7: "Head down to the Sully wing, ground floor — Room 345, Venus de Milo",
+        route_li8: "Sphinx Crypt, Sully ground floor (Room 338) — Great Sphinx of Tanis, at the entrance to the Egyptian antiquities",
+        route_li9: "Richelieu wing, ground floor, Room 227 — Code of Hammurabi, in the Mesopotamian antiquities",
+        route_li10: "Next door, Room 229 (Cour Khorsabad) — the Lamassu, human-headed winged bulls that guarded Sargon II's palace",
+        route_tip: "This route covers the big names in about 2.5–3 hours of unhurried walking. With the day's 3–4 hour block booked, there's still a little slack for one of the bonus stops below, or to wander the Grande Galerie.",
+        bonus_title: "Bonus stops — if you have extra time",
+        bonus_sub: "Off the main route, but close enough to fit in without losing much time",
+        bonus_li1: "The Seated Scribe — Sully wing, 1st floor, Room 635 — one more flight of stairs up from the Sphinx, but the inlaid crystal eyes are worth it",
+        bonus_li2: "Napoleon III Apartments — Richelieu wing, 1st floor — head straight up from where you already are (Room 227/229) for the gilded Second Empire staterooms",
+        bonus_li3: "Medieval Louvre Foundations — Sully wing, Level -1 — head down to the basement to see the moat and walls of the original 12th-century castle",
+        art_title: "The artworks — so you recognize them before you reach the room",
+        art_sub: "Photos and location for each highlight, in the order of the route above",
+        art0_name: "Psyche Revived by Cupid's Kiss",
+        art0_artist: "Antonio Canova, 1787–1793",
+        art0_room: "Denon, ground floor — Room 403 (Michelangelo Gallery)",
+        art0_desc: "Neoclassical marble capturing the instant Cupid wakes Psyche with a kiss — a moment of pure lightness carved in stone.",
+        art1_name: "Mona Lisa (La Joconde)",
+        art1_artist: "Leonardo da Vinci, c. 1503–1519",
+        art1_room: "Denon, 1st floor — Room 711",
+        art1_desc: "Smaller than most people expect (77×53 cm) and behind bulletproof glass — arrive before 10am to see it without a crowd in front.",
+        art2_name: "The Wedding at Cana",
+        art2_artist: "Paolo Veronese, 1563",
+        art2_room: "Denon, 1st floor — Room 711 (wall opposite the Mona Lisa)",
+        art2_desc: "The largest painting in the Louvre — over 70 m². Almost nobody notices it because everyone has their back to it, looking at the Mona Lisa.",
+        art3_name: "Winged Victory of Samothrace",
+        art3_artist: "Greek sculpture, c. 190 BC",
+        art3_room: "Denon, 1st floor — top of the Daru staircase",
+        art3_desc: "A headless, armless statue at the top of a monumental staircase — one of the most photographed spots in the museum.",
+        art4_name: "Liberty Leading the People",
+        art4_artist: "Eugène Delacroix, 1830",
+        art4_room: "Denon, 1st floor — Room 700 (Salle Mollien)",
+        art4_desc: "The woman raising the French flag — an image that became a symbol of revolution itself.",
+        art5_name: "The Raft of the Medusa",
+        art5_artist: "Théodore Géricault, 1818–1819",
+        art5_room: "Denon, 1st floor — Room 700 (facing Liberty)",
+        art5_desc: "A huge, dramatic canvas — shipwreck survivors piled onto a raft, based on a real wreck that shocked France.",
+        art6_name: "The Coronation of Napoleon",
+        art6_artist: "Jacques-Louis David, 1805–1807",
+        art6_room: "Denon, 1st floor — Room 702 (Salle Daru)",
+        art6_desc: "A massive canvas (nearly 10 m wide) showing Napoleon crowning his own wife in front of the Pope.",
+        art7_name: "Venus de Milo",
+        art7_artist: "Greek sculpture, c. 150–125 BC",
+        art7_room: "Sully, ground floor — Room 345",
+        art7_desc: "The world's most famous armless statue — worth walking around, since the classic front-on photo only shows one side.",
+        art8_name: "Great Sphinx of Tanis",
+        art8_artist: "Ancient Egypt, c. 2600 BC",
+        art8_room: "Sully, ground floor — Room 338 (Sphinx Crypt)",
+        art8_desc: "One of the largest sphinxes outside Egypt, right at the entrance to the Egyptian antiquities department.",
+        art9_name: "Code of Hammurabi",
+        art9_artist: "Babylon, c. 1750 BC",
+        art9_room: "Richelieu, ground floor — Room 227",
+        art9_desc: "A 2.25m basalt stele carrying one of the oldest law codes ever found, carved in cuneiform script.",
+        art10_name: "Lamassu (winged bulls)",
+        art10_artist: "Palace of Sargon II, Khorsabad, c. 720–705 BC",
+        art10_room: "Richelieu, ground floor — Room 229 (Cour Khorsabad)",
+        art10_desc: "28-tonne Assyrian guardians with a bull's body, an eagle's wings, and a crowned human head — stood at the palace gates to ward off evil.",
+        art11_name: "The Seated Scribe",
+        art11_artist: "Ancient Egypt, c. 2600–2350 BC",
+        art11_room: "Sully, 1st floor — Room 635 (bonus)",
+        art11_desc: "A painted limestone figure over 4,000 years old, famous for the inlaid crystal eyes that seem to follow you.",
+        art12_name: "Napoleon III Apartments",
+        art12_artist: "Second Empire, 1860s",
+        art12_room: "Richelieu, 1st floor (bonus)",
+        art12_desc: "Gold-and-red staterooms with enormous chandeliers — no antiquity here, just pure Second Empire excess.",
+        art13_name: "Medieval Louvre Foundations",
+        art13_artist: "Philippe Auguste's fortress, late 12th century",
+        art13_room: "Sully, Level -1 (bonus)",
+        art13_desc: "The museum's basement holds the moat and walls of the original castle, from when the Louvre was a defensive fortress.",
+        know_title: "Good to know",
+        know_li1: "The Apollo Gallery reopened in July 2026 after the October 2025 crown jewel heist — the display cases where the jewels sat are now empty, so it's no longer a must-stop on this route",
+        know_li2: "Free Wi-Fi in the museum (network _Musée du Louvre) if you want to check the official map on the app",
+        know_li3: "Large bags and luggage go through an X-ray at the entrance — bring only what you need to keep security quick",
+        know_li4: "Restrooms and a café are in the underground hall beneath the Pyramid — a good break point between the Denon and Sully wings",
+        footer: "Paris Itinerary, September 2026"
+      }
+    };
+
+    let currentLang = 'pt';
+
+    function toggleLang() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      const dict = translations[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      document.getElementById('lang-btn').textContent = currentLang === 'pt' ? 'English' : 'Português';
+      document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+    }
+  </script>
+
+</body>
+</html>
